@@ -1,0 +1,105 @@
+@import "../variables.scss";
+
+.skills {
+  &__wrapper {
+    width: 100%;
+  }
+}
+
+.skill {
+  width: 100%;
+  // max-width: 1200px;
+  margin: 30px auto;
+  background-color: white;
+
+  @media (min-width: $breakpoint-md) {
+    width: 80%;
+  }
+
+  &__content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+
+    &__item {
+      margin: 30px 20px;
+      max-height: 100px;
+      // width: calc(50% - 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width: $breakpoint-md) {
+        // width: 150px;
+      }
+
+      img {
+        // width: auto;
+        max-width: 50px;
+        max-height: 80px;
+        margin-bottom: 20px;
+        margin: 20px;
+
+        // @media (min-width: $breakpoint-md) {
+        //   max-width: 100px;
+        // }
+      }
+
+      h3 {
+        color: black;
+      }
+    }
+
+    section {
+      
+      p {
+        width: 70%;
+        margin: 10px auto 30px auto;
+      }
+    }
+  }
+
+  h2 {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    background-color: #485460;
+    color: white;
+    text-align: center;
+  }
+
+  &__button {
+    padding: 10px 15px;
+    margin: 30px auto;
+    background-color: $orange-dark;
+    color: white;
+    font-family: $header-font;
+    font-size: 16px;
+    border: none;
+    border-radius: 23px;
+    transition: ease-in-out 0.5s;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      background-color: $teal-dark;
+    }
+
+    &__wrapper {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+}
+
+&--design {
+    display: flex;
+    flex-direction: column;
+}
+}

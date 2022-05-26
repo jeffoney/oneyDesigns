@@ -1,0 +1,77 @@
+@import "../variables.scss";
+
+.content {
+  &__about {
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 5%;
+      background-color: whitesmoke;
+
+      @media (min-width: $breakpoint-md) {
+        width: 50%;
+      }
+
+      &__item {
+        width: calc(25% - 30px);
+        margin: 15px;
+        text-align: center;
+
+        @media (min-width: $breakpoint-md) {
+          width: calc(25% - 60px);
+          margin: 30px;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        h3 {
+          color: black;
+        }
+      }
+    }
+
+    &__info {
+      &--logos {
+        width: 100%;
+        padding: 15% 5%;
+        margin: auto;
+
+        @media (min-width: $breakpoint-md) {
+          width: 50%;
+          padding: 0 5%;
+        }
+
+        a {
+          margin: auto;
+
+          button {
+            background-color: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(5px);
+            padding: 10px 15px;
+            margin: 35px;
+            border: 2px solid whitesmoke;
+            border-radius: 30px;
+            color: whitesmoke;
+            font-family: 'Montserrat';
+            letter-spacing: 1px;
+            transition: ease-in-out 0.5s;
+
+            @media (min-width: $breakpoint-md) {
+              margin: 0px auto 35px auto;
+           }
+
+            &:hover {
+              background-color: rgba(255, 255, 255, .35);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    } 
+  }
+}
