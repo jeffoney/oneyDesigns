@@ -1,0 +1,222 @@
+@import "../variables.scss";
+
+.content {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  border: 1px solid $background-dark;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  &__loading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h3 {
+      color: white;
+    }
+  }
+
+  &__pagination {
+    width: 100%;
+    height: 50px;
+    margin: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $teal-darker;
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+    
+    article {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: $breakpoint-md) {
+        width: calc(100% / 3);
+      }
+    }
+
+    :nth-child(3) {
+      justify-content: center;
+
+      @media (min-width: $breakpoint-md) {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &--home {
+    position: relative;
+    background-color: $background-dark;
+    min-height: calc(100vh - 65px);
+    margin: 5px;
+  }
+
+  &__divider {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+    height: 5px;
+    background-color: grey;
+  }
+
+  &__item {
+    position: relative;
+    width: calc(50% - 20px);
+    margin: 10px;
+    transition: all 500ms ease-in-out;
+    background-color: $background-dark;
+    filter: grayscale(75%);
+    height: 20vh;
+
+    &:hover {
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+      transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+      filter: grayscale(0);
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: calc(50% - 20px);
+      height: 45vh;
+    }
+    
+    @media (min-width: $breakpoint-xxl) {
+      width: calc(33% - 20px);
+      height: 30vh;
+    }
+
+    &__header {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      padding: 15px;
+      background-color: rgba(30, 39, 46, 0.35);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
+      border-radius: 3px;
+
+      &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @media (min-width: $breakpoint-lg) {
+          flex-direction: row;
+          align-items: center;        
+        }
+
+        &__text {
+          color: whitesmoke;
+          font-family: $header-font;
+          letter-spacing: 1.3px;
+          font-weight: 500;
+          overflow-wrap: break-word;
+          font-size: 14px;
+
+          @media (min-width: $breakpoint-lg) {
+            font-size: 20px;
+          }
+        }
+
+        &__type {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            margin-left: 10px;
+            font-size: 1rem;
+            color: $teal-dark;
+
+            @media (min-width: $breakpoint-lg) {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__image {
+      &__img {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+
+        @media (min-width: $breakpoint-md) {
+          height: 45vh;
+        }
+        
+        @media (min-width: $breakpoint-xxl) {
+          height: 30vh;
+        }
+      }
+    }
+
+    &__tags {
+      display: none;
+      flex-wrap: wrap;
+
+      &__button {
+        min-width: 30px;
+        height: fit-content;
+        margin: 5px;
+        padding: 3px 7px;
+        border: none;
+        border-radius: 15px;
+        background-color: $background-light;
+        border: 1px solid $background-light;
+        color: $lightgrey;
+        text-transform: lowercase;
+        font-style: italic;
+        cursor: pointer;
+
+        &:hover {
+          display: flex;
+        }
+      }
+    }
+
+    &__magnifier {
+      position: absolute;
+      top: 38%;
+      left: 41%;
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
