@@ -1,0 +1,141 @@
+@import "../variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: none;
+  width: 25%;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc(100vh - 50px);
+    
+    &__p {
+      color: $lightgrey;
+      padding: 15px;
+      font-style: italic;
+      letter-spacing: 1px;
+      font-size: 19px;
+      text-align: justify;
+
+      &--salt {
+        text-align: right;
+        color: $teal-light;
+      }
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  margin-top: 6px;
+
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 84, 96, 0.3);
+    top: 0;
+
+    article {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 15px;
+        background-color: $teal-dark;
+        box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.15);
+        font-family: $header-font;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+
+  &__header {
+    position: absolute;
+    top: 7vh;
+    left: 15px;
+    z-index: 50;
+    font-size: 2.2vw;
+    font-family: $header-font;
+    text-align: left;
+    margin-right: 30px;
+    color: white;
+  }
+}
+
+.react-slideshow-container {
+  .default-nav {
+    display: none;
+  } 
+}
+
+.each-slide > article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 70vh;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.sidebar {
+  &__links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+
+    svg {
+      color: white;
+      font-size: 2vw;
+      margin: 5px;
+      transition: ease-in-out 0.3s;;
+
+      &:nth-child(2){
+        font-size: 1.8vw;
+      }
+
+      &:hover {
+        color: $teal-dark;
+        cursor: pointer;
+      }
+    }
+  }
+}
