@@ -1,0 +1,89 @@
+@import "../variables.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  
+  &__section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+
+    &__topbar {
+      width: 100%;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      background-color: $background-dark;
+      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
+      -webkit-box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
+      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
+    }
+
+    &__menu {
+      position: fixed;
+      top: 15px;
+      right: 14px;
+      z-index: 90;
+      cursor: pointer;
+      display: block;
+
+      @media (min-width: $breakpoint-md) {
+        display: none;
+      }
+
+      svg {
+        width: 25px;
+      }
+    }
+
+    &__name {
+      color: whitesmoke;
+      position: fixed;
+      top: 15px;
+      left: 25px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+.navigation {
+  position: fixed;
+  left: 220px;
+  top: 17px;
+  list-style-type: none;
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+  }
+
+  h3 {
+    margin: 0 10px;
+    background-color: $background-dark;
+    border: none;
+    color: whitesmoke;
+    font-family: $paragraph;
+    font-weight: 500;
+    transition: ease-in-out 0.3s;
+
+
+    &:hover {
+      cursor: pointer;
+      color: $teal-dark;
+    }
+  }
+}
+
+.pages {
+  position: fixed;
+  right: 0;
+  top: 15px;
+}
